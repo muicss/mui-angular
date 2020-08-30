@@ -1,6 +1,7 @@
-# MUI Angular Library
+# MUI Angular Component Library
 
-[![MUI](https://www.muicss.com/static/favicons/icon-192x192.png)](https://www.muicss.com)
+[![MUI](https://www.muicss.com/static/favicons/icon-192x192.png)](https://www.muicss.com/)
+[![Angular](https://angular.io/assets/images/favicons/favicon-194x194.png)](https://angular.io/)
 
 MUI Angular is a library that helps you to add MUI components to your Angular apps seamlessly.
 
