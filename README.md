@@ -1,27 +1,94 @@
-# MuiAngular
+# MUI Angular Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+[![MUI](https://www.muicss.com/static/favicons/icon-192x192.png)](https://www.muicss.com)
 
-## Development server
+MUI Angular is a library that helps you to add MUI components to your Angular apps seamlessly.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Install with NPM:**
 
-## Code scaffolding
+```shell
+$ npm install --save mui-angular
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Install with ng:**
 
-## Build
+```shell
+$ ng add mui-angular
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Quickstart
 
-## Running unit tests
+Create a new Angular app and install mui-angular
+
+```shell
+$ ng new my-app
+$ cd my-app
+$ ng add mui-angular
+```
+
+Add the mui-angular button module to the app module (`src/app/app.module.ts`):
+
+```js
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { ButtonModule } from 'mui-angular/button';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+Replace the app component html code with the following (`src/app/app.component.html`):
+
+```html
+<mui-button>Press Me!</mui-button>
+```
+
+Run the development server:
+
+```shell
+$ ng serve
+```
+
+Then visit http://localhost:4200/
+
+## Development
+
+This repository contains the source code for the MUI Angular library (`projects/mui-angular`) and an example app that uses the library (`projects/example-app`).
+
+To build the library run:
+
+```shell
+$ ng build mui-angular
+```
+
+To view the example app:
+
+```shell
+$ ng serve example-app
+```
+
+### Build
+
+Run `ng build` to build the library. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build. Use the `--watch` flag to rebuild the library on code changes.
+
+### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
