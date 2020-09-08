@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Core variables and mixins
+@import
+"~muicss/lib/sass/mui/colors",
+"~muicss/lib/sass/mui/variables",
+"~muicss/lib/sass/mui/mixins";
+
+// Globals
+@import
+"~muicss/lib/sass/mui/globals";
+
+// Components
+@import
+"~muicss/lib/sass/mui/appbar",
+"~muicss/lib/sass/mui/buttons";
+
+// Miscellaneous
+@import
+"~muicss/lib/sass/mui/helpers",
+"~muicss/lib/sass/mui/typography";

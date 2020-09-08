@@ -19,6 +19,9 @@
       "mui-angular": [
         "dist/mui-angular/mui-angular",
         "dist/mui-angular"
+      ],
+      "mui-angular/*": [
+        "dist/mui-angular/*"
       ]
     }
   }

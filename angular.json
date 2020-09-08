@@ -45,7 +45,11 @@
     },
     "example-app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/example-app",
       "sourceRoot": "projects/example-app/src",
       "prefix": "app",
@@ -64,8 +68,13 @@
               "projects/example-app/src/assets"
             ],
             "styles": [
-              "projects/example-app/src/styles.css"
+              "projects/example-app/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "dist"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -128,7 +137,7 @@
               "projects/example-app/src/assets"
             ],
             "styles": [
-              "projects/example-app/src/styles.css"
+              "projects/example-app/src/styles.scss"
             ],
             "scripts": []
           }
@@ -159,6 +168,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mui-angular"
 }
