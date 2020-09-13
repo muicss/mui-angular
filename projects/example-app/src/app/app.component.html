@@ -1,3 +1,65 @@
-<mui-appbar>appbar content</mui-appbar>
-<mui-button variant="primary">press me</mui-button>
-<mui-button variant="primary" [disabled]="true">disabled</mui-button>
+<mui-container fluid>
+    <mui-row>
+        <mui-col sm="10" sm-offset="1">
+            <h1>Appbar</h1>
+            <mui-panel>
+                <mui-appbar>appbar content</mui-appbar>
+            </mui-panel>
+        </mui-col>
+    </mui-row>
+
+    <mui-row>
+        <mui-col sm="10" sm-offset="1">
+            <h1>Button</h1>
+            <mui-panel>
+                <mui-button variant="primary">press me</mui-button>
+            </mui-panel>
+        </mui-col>
+    </mui-row>
+
+    <mui-row>
+        <mui-col sm="10" sm-offset="1">
+            <h1>Grid</h1>
+            <mui-panel>
+                <mui-col md="4">md-4</mui-col>
+                <mui-col md="4" md-offset="4">md-4 md-offset-4</mui-col>
+            </mui-panel>
+        </mui-col>
+    </mui-row>
+
+    <mui-row>
+        <mui-col sm="10" sm-offset="1">
+            <h1>Divider</h1>
+            <mui-panel>
+             
+                <h2>mui-divider</h2>
+                <div>Content 1</div>
+                <mui-divider></mui-divider>
+                <div>Content 2</div>
+
+                <h2>mui--divider-top</h2>
+                <div>Content 1</div>
+                <mui-divider location="top">Divider Top</mui-divider>
+
+                <h2>mui--divider-bottom</h2>
+                <mui-divider location="bottom">Divider Bottom</mui-divider>
+                <div>Content 2</div>
+
+                <h2>mui--divider-left</h2>
+                <div>
+                    <span>Content 1</span>
+                    <mui-divider location="left">Divider Left</mui-divider>
+                </div>
+
+                <h2>mui--divider-right</h2>
+                <div>
+                    <mui-divider location="right">Divider Right</mui-divider>
+                    <span>Content 2</span>
+                </div>
+
+            </mui-panel>
+        </mui-col>
+    </mui-row>
+
+
+</mui-container>

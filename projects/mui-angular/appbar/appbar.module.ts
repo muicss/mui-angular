@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AppbarComponent } from './appbar.component';
 
-
 @NgModule({
   declarations: [AppbarComponent],
   imports: [
@@ -11,6 +10,5 @@ import { AppbarComponent } from './appbar.component';
   ],
   exports: [AppbarComponent]
 })
-
 
 export class AppbarModule { }
