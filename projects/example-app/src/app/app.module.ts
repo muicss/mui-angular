@@ -9,11 +9,12 @@ import { PanelModule as MuiPanelModule } from 'mui-angular/panel';
 import { RowModule as MuiRowModule } from 'mui-angular/row';
 import { DividerModule as MuiDividerModule } from 'mui-angular/divider';
 
-import { HomeComponent } from './home';
+import { HomePageComponent } from './home-page';
 import { AppbarPageComponent } from './appbar-page';
 import { ButtonPageComponent } from './button-page';
 import { GridPageComponent} from './grid-page';
 import { DividerPageComponent } from './divider-page';
+import { PanelPageComponent } from './panel-page';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
@@ -21,11 +22,12 @@ import { AppRoutingModule } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomePageComponent,
     AppbarPageComponent,
     ButtonPageComponent,
     GridPageComponent,
-    DividerPageComponent
+    DividerPageComponent,
+    PanelPageComponent
   ],
   imports: [
     BrowserModule,
