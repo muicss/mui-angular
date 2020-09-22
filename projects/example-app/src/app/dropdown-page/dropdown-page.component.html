@@ -1,0 +1,98 @@
+<mui-container>
+  <mui-row>
+    <h1>Angular Dropdowns</h1>
+
+    <h2>Dropdown (default)</h2>
+    <mui-panel>
+      <div id="example-dropdown-default">
+        <mui-dropdown variant="flat" color="primary" label="dropdown" noCaret="true">
+          <mui-dropdown-item link="appbar">Appbar</mui-dropdown-item>
+          <mui-dropdown-item link="button">Buttons</mui-dropdown-item>
+          <mui-dropdown-item link="grid">Grid</mui-dropdown-item>
+          <mui-dropdown-item link="divider">Dividers</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+    </mui-panel>
+
+    <h2>Menu Placement and Alignment</h2>
+
+    <mui-panel>
+      <!-- begin embedded angular example -->
+      <div id="example-dropdown-placement-and-alignment">
+        <!-- Placement: down, Alignment: left (default) -->
+        <mui-dropdown color="primary" label="dropdown">
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+      <div>
+        <!-- Placement: down, Alignment: right -->
+        <mui-dropdown
+          color="primary"
+          label="dropdown (right aligned)"
+          alignment="right"
+        >
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+      <div>
+        <!-- Placement: up, Alignment: left -->
+        <mui-dropdown color="primary" label="dropup" placement="up">
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+      <div>
+        <!-- Placement: up, Alignment: right -->
+        <mui-dropdown
+          color="primary"
+          label="dropup (right aligned)"
+          placement="up"
+          alignment="right"
+        >
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+      <div>
+        <!-- Placement: right, Alignment: top -->
+        <mui-dropdown color="primary" label="dropright" placement="right">
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+      <div>
+        <!-- Placement: right, Alignment: bottom -->
+        <mui-dropdown
+          color="primary"
+          label="dropright (bottom aligned)"
+          placement="right"
+          alignment="bottom"
+        >
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+      <div>
+        <!-- Placement: left, Alignment: top -->
+        <mui-dropdown color="primary" label="dropleft" placement="left">
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+      <div>
+        <!-- Placement: left, Alignment: bottom -->
+        <mui-dropdown
+          color="primary"
+          label="dropleft (bottom aligned)"
+          placement="left"
+          alignment="bottom"
+        >
+          <mui-dropdown-item>Option 1</mui-dropdown-item>
+          <mui-dropdown-item>Option 2</mui-dropdown-item>
+        </mui-dropdown>
+      </div>
+    </mui-panel>
+  </mui-row>
+</mui-container>

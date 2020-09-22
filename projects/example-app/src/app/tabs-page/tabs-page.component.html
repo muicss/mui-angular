@@ -1,0 +1,40 @@
+<mui-container>
+  <mui-row>
+
+      <h1>MUI Tabs Component</h1>
+
+      <h2>Default Tabs</h2>
+      <mui-panel>
+        <div id="example-tabs-default">
+          <mui-tabs>
+              <mui-tab tabId="1" label="Tab 1">Pane-1</mui-tab>
+              <mui-tab tabId="2" label="Tab 2" [active]="true">Pane-2</mui-tab>
+              <mui-tab tabId="3" label="Tab 3">Pane-3</mui-tab>
+            </mui-tabs>
+        </div>
+      </mui-panel>
+
+      <h2>Justified Tabs</h2>
+      <mui-panel>
+        <div id="example-tabs-default">
+          <mui-tabs [justified]="true">
+              <mui-tab tabId="1" label="Tab 1">Pane-1</mui-tab>
+              <mui-tab tabId="2" label="Tab 2">Pane-2</mui-tab>
+              <mui-tab tabId="3" label="Tab 3">Pane-3</mui-tab>
+            </mui-tabs>
+        </div>
+      </mui-panel>
+
+      <h2>Advanced Tabs</h2>
+      <mui-panel>
+        <div id="example-tabs-default">
+          <mui-tabs (muiChange)="change($event)">
+              <mui-tab tabId="1" label="Tab 1" (muiSelect)="select($event)" (muiDeselect)="deselect($event)">Pane-1</mui-tab>
+              <mui-tab tabId="2" label="Tab 2" [active]="true" (muiSelect)="select($event)" (muiDeselect)="deselect($event)">Pane-2</mui-tab>
+              <mui-tab tabId="3" label="Tab 3" (muiSelect)="select($event)" (muiDeselect)="deselect($event)">Pane-3</mui-tab>
+            </mui-tabs>
+        </div>
+      </mui-panel>
+
+  </mui-row>
+</mui-container>

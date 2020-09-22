@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({ templateUrl: 'button-page.component.html' })
-export class ButtonPageComponent {}
+export class ButtonPageComponent {
+    isDisabled: boolean = true;
+}
+

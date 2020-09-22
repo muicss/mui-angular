@@ -10,11 +10,11 @@
       <mui-button color="accent">Button</mui-button>
     </div>
     <div>
-      <mui-button disabled>Button</mui-button>
-      <mui-button disabled color="primary">Button</mui-button>
-      <mui-button disabled color="danger">Button</mui-button>
-      <mui-button disabled color="dark">Button</mui-button>
-      <mui-button disabled color="accent">Button</mui-button>
+      <mui-button [disabled]="isDisabled">Button</mui-button>
+      <mui-button [disabled]="true" color="primary">Button</mui-button>
+      <mui-button [disabled]="true" color="danger">Button</mui-button>
+      <mui-button [disabled]="true" color="dark">Button</mui-button>
+      <mui-button [disabled]="true" color="accent">Button</mui-button>
     </div>
   </mui-panel>
 
@@ -28,11 +28,11 @@
       <mui-button variant="flat" color="accent">Button</mui-button>
     </div>
     <div>
-      <mui-button variant="flat" ng-disabled="true">Button</mui-button>
-      <mui-button variant="flat" ng-disabled="true" color="primary">Button</mui-button>
-      <mui-button variant="flat" ng-disabled="true" color="danger">Button</mui-button>
-      <mui-button variant="flat" ng-disabled="true" color="dark">Button</mui-button>
-      <mui-button variant="flat" ng-disabled="true" color="accent">Button</mui-button>
+      <mui-button variant="flat" [disabled]="true">Button</mui-button>
+      <mui-button variant="flat" [disabled]="true" color="primary">Button</mui-button>
+      <mui-button variant="flat" [disabled]="true" color="danger">Button</mui-button>
+      <mui-button variant="flat" [disabled]="true" color="dark">Button</mui-button>
+      <mui-button variant="flat" [disabled]="true" color="accent">Button</mui-button>
     </div>
   </mui-panel>
   
@@ -46,11 +46,11 @@
       <mui-button variant="raised" color="accent">Button</mui-button>
     </div>
     <div>
-      <mui-button variant="raised" ng-disabled="true">Button</mui-button>
-      <mui-button variant="raised" ng-disabled="true" color="primary">Button</mui-button>
-      <mui-button variant="raised" ng-disabled="true" color="danger">Button</mui-button>
-      <mui-button variant="raised" ng-disabled="true" color="dark">Button</mui-button>
-      <mui-button variant="raised" ng-disabled="true" color="accent">Button</mui-button>
+      <mui-button variant="raised" [disabled]="true">Button</mui-button>
+      <mui-button variant="raised" [disabled]="true" color="primary">Button</mui-button>
+      <mui-button variant="raised" [disabled]="true" color="danger">Button</mui-button>
+      <mui-button variant="raised" [disabled]="true" color="dark">Button</mui-button>
+      <mui-button variant="raised" [disabled]="true" color="accent">Button</mui-button>
     </div>
   </mui-panel>
 
@@ -64,11 +64,11 @@
       <mui-button variant="fab" color="accent">+</mui-button>
     </div>
     <div>
-      <mui-button variant="fab" ng-disabled="true">+</mui-button>
-      <mui-button variant="fab" ng-disabled="true" color="primary">+</mui-button>
-      <mui-button variant="fab" ng-disabled="true" color="danger">+</mui-button>
-      <mui-button variant="fab" ng-disabled="true" color="dark">+</mui-button>
-      <mui-button variant="fab" ng-disabled="true" color="accent">+</mui-button>
+      <mui-button variant="fab" [disabled]="true">+</mui-button>
+      <mui-button variant="fab" [disabled]="true" color="primary">+</mui-button>
+      <mui-button variant="fab" [disabled]="true" color="danger">+</mui-button>
+      <mui-button variant="fab" [disabled]="true" color="dark">+</mui-button>
+      <mui-button variant="fab" [disabled]="true" color="accent">+</mui-button>
     </div>
   </mui-panel>
 
