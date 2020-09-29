@@ -1,0 +1,48 @@
+<mui-container fluid>
+  <h1>MUI Form Component</h1>
+  <h2>Reactive Input</h2>
+  <mui-panel>
+    <form class="mui-form" [formGroup]="basicForm" (ngSubmit)="onSubmitReactive()">
+      <legend>Inputs</legend>
+      <mui-input id="first" label="First Name" formControlName="first" minlength="3" maxlength="10" autofocus="true"></mui-input>
+      <mui-input label="Last Name" formControlName="last" placeholder="enter last name"></mui-input>
+      <mui-input type="email" label="Email" formControlName="email"></mui-input>
+      <mui-input type="number" label="Zip Code" formControlName="zip" placeholder="enter zip code"></mui-input>
+      <mui-input type="password" label="Password" formControlName="pwd" placeholder="enter password"></mui-input>
+      <mui-textarea label="Notes" formControlName="notes" placeholder="textarea"></mui-textarea>
+      <mui-button [disabled]="!basicForm.valid"  variant="raised" size="small" color="primary">Submit</mui-button>
+    </form>
+    <p>Form Value: {{ basicForm.value | json }}</p>
+    <p>Form Status: {{ basicForm.status }}</p>
+  </mui-panel>
+
+  <h2>Template Input</h2>
+  <mui-panel>
+    <form class="mui-form" #f="ngForm" (ngSubmit)="onSubmitTemplate(f)">
+      <legend>Inputs</legend>
+      <mui-input label="First Name" [(ngModel)]="first" name="first"  placeholder="enter first name here" required="true"></mui-input>
+      <mui-input label="Last Name" [(ngModel)]="last" name="last" placeholder="enter last name here" required="true"></mui-input>
+      <mui-button variant="raised" size="small" color="primary" [disabled]="!f.valid">Submit</mui-button>
+    </form>
+    <p>First name value: {{ first }}</p>
+    <p>Last name value: {{ last }}</p>
+    <p>Form value: {{ f.value | json }}</p>
+    <p>Form valid: {{ f.valid }}</p>
+  </mui-panel>
+
+  <h2>Inline form</h2>
+  <mui-panel>
+    <form class="mui-form mui-form--inline" [formGroup]="inlineForm" (ngSubmit)="resetInlineForm()">
+      <mui-input id="inlineField" formControlName="inlineText" placeholder="Placeholder 1"></mui-input>
+      <mui-button variant="flat">Submit</mui-button>
+    </form>
+  </mui-panel>
+
+  <h2>Floating label</h2>
+  <mui-panel>
+    <form class="mui-form" [formGroup]="floatingForm">
+      <mui-input floatLabel label="Floating text field" formControlName="floatingText"></mui-input>
+    </form>
+  </mui-panel>
+
+</mui-container>
