@@ -7,13 +7,13 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
   <div class="mui-textfield">
       <input #input
         [ngClass]="{
-          'mui--is-dirty': control.dirty,
-          'mui--is-empty': !control.value,
-          'mui--is-invalid': control.invalid,
-          'mui--is-not-empty': control.value,
-          'mui--is-pristine': control.pristine,
-          'mui--is-touched': control.touched,
-          'mui--is-untouched': control.untouched}"
+          'mui--is-dirty': ngControl.dirty,
+          'mui--is-empty': !ngControl.value,
+          'mui--is-invalid': ngControl.invalid,
+          'mui--is-not-empty': ngControl.value,
+          'mui--is-pristine': ngControl.pristine,
+          'mui--is-touched': ngControl.touched,
+          'mui--is-untouched': ngControl.untouched}"
         (input)="onChange($event.target.value)"
         (blur)="onTouched()"
         [disabled]="disabled">
@@ -37,16 +37,14 @@ export class InputComponent implements AfterViewInit, ControlValueAccessor {
 
   @Input() minlength?: string;
 
-  @Input() name?: string;
-
   @Input() required?: boolean = false;
 
   @Input() type?: 'number' | 'text' | 'password' | 'email' = 'text';
 
   @ViewChild('input', { static: true, read: ElementRef }) input: ElementRef;
 
-  constructor(@Self() public control: NgControl, private renderer: Renderer2, private wrapper: ElementRef) {
-    control.valueAccessor = this;
+  constructor(@Self() public ngControl: NgControl, private renderer: Renderer2, private wrapper: ElementRef) {
+    ngControl.valueAccessor = this;
   }
 
   ngAfterViewInit(): void {
@@ -70,7 +68,7 @@ export class InputComponent implements AfterViewInit, ControlValueAccessor {
     if (this.maxlength) { this.renderer.setAttribute(inputEl, 'maxlength', this.maxlength); }
 
     // name
-    if (this.name) { this.renderer.setAttribute(inputEl, 'name', this.name); }
+    this.renderer.setAttribute(inputEl, 'name', this.ngControl.name.toString());
 
     // placeholder
     if (this.placeholder) { this.renderer.setAttribute(inputEl, 'placeholder', this.placeholder); }
