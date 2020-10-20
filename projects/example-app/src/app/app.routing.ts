@@ -8,6 +8,7 @@ import { DropdownPageComponent } from './dropdown-page';
 import { GridPageComponent } from './grid-page';
 import { PanelPageComponent } from './panel-page';
 import { TabsPageComponent } from './tabs-page';
+import { FormPageComponent } from './form-page';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'grid', component: GridPageComponent },
   { path: 'panel', component: PanelPageComponent },
   { path: 'tabs', component: TabsPageComponent },
+  { path: 'form', component: FormPageComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
