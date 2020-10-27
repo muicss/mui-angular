@@ -1,27 +1,30 @@
 <mui-container fluid>
   <h1>MUI Form Component</h1>
-  <h2>Reactive Input</h2>
+  <h2>Input - reactive</h2>
   <mui-panel>
-    <form class="mui-form" [formGroup]="basicForm" (ngSubmit)="onSubmitReactive()">
+    <form class="mui-form" [formGroup]="inputForm" (ngSubmit)="submitInputReactive()">
       <legend>Inputs</legend>
-      <mui-input id="first" label="First Name" formControlName="first" minlength="3" maxlength="10" autofocus="true"></mui-input>
-      <mui-input label="Last Name" formControlName="last" placeholder="enter last name"></mui-input>
-      <mui-input type="email" label="Email" formControlName="email"></mui-input>
+      <mui-input id="first" label="First Name (required)" formControlName="first" minlength="3" maxlength="10"
+        autofocus="true"></mui-input>
+      <mui-input label="Last Name (required)" formControlName="last" placeholder="enter last name"></mui-input>
+      <mui-input type="email" label="Email (required)" formControlName="email"></mui-input>
       <mui-input type="number" label="Zip Code" formControlName="zip" placeholder="enter zip code"></mui-input>
       <mui-input type="password" label="Password" formControlName="pwd" placeholder="enter password"></mui-input>
       <mui-textarea label="Notes" formControlName="notes" placeholder="textarea"></mui-textarea>
-      <mui-button [disabled]="!basicForm.valid"  variant="raised" size="small" color="primary">Submit</mui-button>
+      <mui-button [disabled]="!inputForm.valid" variant="raised" size="small" color="primary">Submit</mui-button>
     </form>
-    <p>Form Value: {{ basicForm.value | json }}</p>
-    <p>Form Status: {{ basicForm.status }}</p>
+    <p>Form Value: {{ inputForm.value | json }}</p>
+    <p>Form Status: {{ inputForm.status }}</p>
   </mui-panel>
 
-  <h2>Template Input</h2>
+  <h2>Input - template driven</h2>
   <mui-panel>
-    <form class="mui-form" #f="ngForm" (ngSubmit)="onSubmitTemplate(f)">
+    <form class="mui-form" #f="ngForm" (ngSubmit)="submitInputTemplate(f)" ngNativeValidate>
       <legend>Inputs</legend>
-      <mui-input label="First Name" [(ngModel)]="first" name="first"  placeholder="enter first name here" required="true"></mui-input>
-      <mui-input label="Last Name" [(ngModel)]="last" name="last" placeholder="enter last name here" required="true"></mui-input>
+      <mui-input label="First Name (required)" [(ngModel)]="first" name="first" placeholder="enter first name here"
+        required="true"></mui-input>
+      <mui-input label="Last Name (required)" [(ngModel)]="last" name="last" placeholder="enter last name here" required="true">
+      </mui-input>
       <mui-button variant="raised" size="small" color="primary" [disabled]="!f.valid">Submit</mui-button>
     </form>
     <p>First name value: {{ first }}</p>
@@ -30,19 +33,80 @@
     <p>Form valid: {{ f.valid }}</p>
   </mui-panel>
 
-  <h2>Inline form</h2>
+  <h2>Input - standalone (formControl & ngModel)</h2>
   <mui-panel>
-    <form class="mui-form mui-form--inline" [formGroup]="inlineForm" (ngSubmit)="resetInlineForm()">
+    <mui-input label='[formControl]' [formControl]='inputControl' placeholder="control value"></mui-input>
+    <mui-input label="[(ngModel)]" [(ngModel)]="inputValue" name="inputValue" placeholder="enter input value">
+    </mui-input>
+    <p>[formControl]: {{ inputControl.value | json }}</p>
+    <p>[(ngModel)]: {{ inputValue }}</p>
+  </mui-panel>
+
+  <h2>Input - floating label</h2>
+  <mui-panel>
+    <form class="mui-form" [formGroup]="floatingForm">
+      <mui-input floatLabel label="Floating text field" formControlName="floatingText"></mui-input>
+    </form>
+  </mui-panel>
+
+  <h2>Input - inline form</h2>
+  <mui-panel>
+    <form class="mui-form--inline" [formGroup]="inlineForm" (ngSubmit)="resetInlineForm()">
       <mui-input id="inlineField" formControlName="inlineText" placeholder="Placeholder 1"></mui-input>
       <mui-button variant="flat">Submit</mui-button>
     </form>
   </mui-panel>
 
-  <h2>Floating label</h2>
+  <h2>Radio buttons - Reactive</h2>
   <mui-panel>
-    <form class="mui-form" [formGroup]="floatingForm">
-      <mui-input floatLabel label="Floating text field" formControlName="floatingText"></mui-input>
+    <form class="mui-form" [formGroup]="radioForm">
+      <mui-radio formControlName="groupA" label="Option 1" value="a-1"></mui-radio>
+      <mui-radio formControlName="groupA" label="Option 2" value="a-2"></mui-radio>
+      <mui-radio formControlName="groupA" label="Option 3" value="a-3"></mui-radio>
     </form>
+    <p>Form Value: {{ radioForm.value | json }}</p>
+    <p>Form Status: {{ radioForm.status }}</p>
+  </mui-panel>
+
+  <h2>Radio buttons - Template driven</h2>
+  <mui-panel>
+    <form class="mui-form" #r="ngForm">
+      <mui-radio id="radio1" [(ngModel)]="radioValue" name="radioValue" label="Radio 1" value="radio-1"></mui-radio>
+      <mui-radio id="radio2" [(ngModel)]="radioValue" name="radioValue" label="Radio 2" value="radio-2"></mui-radio>
+      <mui-radio id="radio3" [(ngModel)]="radioValue" name="radioValue" label="Radio 3" value="radio-3"></mui-radio>
+    </form>
+    <p>Form Value: {{ r.value | json }}</p>
+    <p>Form Status: {{ r.valid }}</p>
+  </mui-panel>
+
+  <h2>Checkboxes - Reactive</h2>
+  <mui-panel>
+    <form class="mui-form" [formGroup]="checkForm">
+      <mui-checkbox label="Option 1 (required)" value="one" formControlName="checkOne"></mui-checkbox>
+      <mui-checkbox label="Option 2 (disabled)" value="two" formControlName="checkTwo"></mui-checkbox>
+      <mui-checkbox label="Option 3" value="three" formControlName="checkThree"></mui-checkbox>
+    </form>
+    <p>Form Value: {{ checkForm.value | json }}</p>
+    <p>Form Status: {{ checkForm.status }}</p>
+  </mui-panel>
+
+  <h2>Checkbox - Template driven</h2>
+  <mui-panel>
+    <form class="mui-form" #c="ngForm">
+      <mui-checkbox label="Option 1" value="one" [(ngModel)]="checkValueA" name="checkValueA"></mui-checkbox>
+      <mui-checkbox label="Option 2" value="two" [(ngModel)]="checkValueB" name="checkValueB" required="true">
+      </mui-checkbox>
+    </form>
+    <p>Form Value: {{ c.value | json }}</p>
+    <p>Form Status: {{ c.valid }}</p>
+  </mui-panel>
+
+  <h2>Checkbox - Standalone (formControl & ngModel)</h2>
+  <mui-panel>
+    <mui-checkbox label="[formControl]" value="alone" [formControl]="standaloneCheck"></mui-checkbox>
+    <mui-checkbox label="[(ngModel)]" [(ngModel)]="standaloneCheckValue" name="standaloneCheckValue"></mui-checkbox>
+    <p>Form control Value: {{ standaloneCheck.value | json }}</p>
+    <p>ngModel Value: {{ standaloneCheckValue }}</p>
   </mui-panel>
 
 </mui-container>

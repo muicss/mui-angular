@@ -7,13 +7,13 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
     <div class="mui-textfield">
         <textarea #textarea
             [ngClass]="{
-            'mui--is-dirty': control.dirty,
-            'mui--is-empty': !control.value,
-            'mui--is-invalid': control.invalid,
-            'mui--is-not-empty': control.value,
-            'mui--is-pristine': control.pristine,
-            'mui--is-touched': control.touched,
-            'mui--is-untouched': control.untouched}"
+            'mui--is-dirty': ngControl.dirty,
+            'mui--is-empty': !ngControl.value,
+            'mui--is-invalid': ngControl.invalid,
+            'mui--is-not-empty': ngControl.value,
+            'mui--is-pristine': ngControl.pristine,
+            'mui--is-touched': ngControl.touched,
+            'mui--is-untouched': ngControl.untouched}"
             (input)="onChange($event.target.value)"
             (blur)="onTouched()"
             [disabled]="disabled">
@@ -36,49 +36,48 @@ export class TextareaComponent implements AfterViewInit, ControlValueAccessor {
 
   @Input() maxlength?: string;
 
-  @Input() name?: string;
-
   @Input() required?: boolean = false;
 
   @Input() rows?: string = '2';
 
   @ViewChild('textarea', { static: true, read: ElementRef }) textarea: ElementRef;
 
-  constructor(@Self() public control: NgControl, private renderer: Renderer2, private wrapper: ElementRef) {
-    control.valueAccessor = this;
+  constructor(@Self() public ngControl: NgControl, private renderer: Renderer2, private wrapper: ElementRef) {
+    ngControl.valueAccessor = this;
   }
 
   ngAfterViewInit(): void {
     // cache references to input and wrapper
-    const textareaEl: HTMLTextAreaElement = this.textarea.nativeElement;
+    const inputEl: HTMLTextAreaElement = this.textarea.nativeElement;
     const wrapperEl: HTMLElement = this.wrapper.nativeElement;
 
     // autofocus
-    if (this.autofocus) { this.renderer.selectRootElement(textareaEl).focus(); }
+    if (this.autofocus) { this.renderer.selectRootElement(inputEl).focus(); }
 
-    // id - move from wrapper to input in case users want to access input by id
-    if (this.id) {
-      this.renderer.setAttribute(textareaEl, 'id', this.id);
-      this.renderer.removeAttribute(wrapperEl, 'id');
+    /**
+     * name - gets set on NgControl through inputs for NgModel and formControlName directives only.
+     * Does not work for standalone FormControl directive
+     */
+    if (this.ngControl.name) {
+      this.renderer.setAttribute(inputEl, 'name', this.ngControl.name.toString());
+    } else {
+      console.warn(`
+        It looks like you're using formControl which does not have an input for the
+        name attribute.  If the name attribute is required (i.e. when submitting a form),
+        it is recommended to use either ngModel or formControlName.`);
     }
 
-    // max length
-    if (this.maxlength) { this.renderer.setAttribute(textareaEl, 'maxlength', this.maxlength); }
-
-    // name
-    if (this.name) { this.renderer.setAttribute(textareaEl, 'name', this.name); }
-
-    // placeholder
-    if (this.placeholder) { this.renderer.setAttribute(textareaEl, 'placeholder', this.placeholder); }
-
-    // required
-    if (this.required) { this.renderer.setProperty(textareaEl, 'required', true); }
-
-    // rows
-    if (this.rows) { this.renderer.setAttribute(textareaEl, 'rows', this.rows); }
+    // set attributes
+    ['id', 'maxlength', 'placeholder', 'required', 'rows'].forEach(attrName => {
+      const attrVal = this[attrName];
+      if (attrVal) {
+        this.renderer.setAttribute(inputEl, attrName, attrVal);
+      }
+    });
 
     // remove attributes from wrapper
     this.renderer.removeAttribute(wrapperEl, 'maxlength');
+    this.renderer.removeAttribute(wrapperEl, 'id');
   }
 
   /**

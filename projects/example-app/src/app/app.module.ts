@@ -14,6 +14,8 @@ import { CaretModule as MuiCaretModule } from 'mui-angular/caret';
 import { DropdownModule as MuiDropdownModule } from 'mui-angular/dropdown';
 import { TextareaModule as MuiTextareaModule } from 'mui-angular/textarea';
 import { InputModule as MuiInputModule } from 'mui-angular/input';
+import { RadioModule as MuiRadioModule } from 'mui-angular/radio';
+import { CheckboxModule as MuiCheckboxModule } from 'mui-angular/checkbox';
 
 import { HomePageComponent } from './home-page';
 import { AppbarPageComponent } from './appbar-page';
@@ -58,7 +60,9 @@ import { AppRoutingModule } from './app.routing';
     MuiCaretModule,
     MuiDropdownModule,
     MuiTextareaModule,
-    MuiInputModule
+    MuiInputModule,
+    MuiCheckboxModule,
+    MuiRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
