@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ContentChildren, ElementRef, HostListener, Input, OnDestroy, OnInit, QueryList, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, ElementRef, HostListener, Input, OnDestroy,
+        OnInit, QueryList, Renderer2, ViewChild } from '@angular/core';
 import { DropdownItemComponent } from './dropdown-item.component';
 import { BehaviorSubject, Subscription } from 'rxjs';
 

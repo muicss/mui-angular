@@ -1,48 +1,78 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
-@Component({ templateUrl: 'form-page.component.html' })
-export class FormPageComponent implements OnInit {
-    // reactive form variables
-    basicForm = new FormGroup({
+@Component({templateUrl: 'form-page.component.html'})
+export class FormPageComponent {
+
+    constructor() { }
+    // Input - reactive
+    inputForm = new FormGroup({
         first: new FormControl('Mui', Validators.required),
         last: new FormControl('Css', Validators.required),
-        zip: new FormControl({value: '', disabled: true}),
+        zip: new FormControl({ value: '', disabled: true }),
         email: new FormControl('', [Validators.email, Validators.required]),
         pwd: new FormControl(''),
         notes: new FormControl('')
     });
 
-    // reactive floating label form variables
-    floatingForm = new FormGroup({
-        floatingText: new FormControl('')
-    });
+    // Input = template driven
+    first: any = 'Mui';
+    last: any = '';
 
-    // reactive inline form variables
+    // Input - standalone
+    inputValue = '';
+    inputControl: FormControl = new FormControl('');
+
+    // input - inline
     inlineForm = new FormGroup({
         inlineText: new FormControl('')
     });
 
-    // template driven variables
-    first: any = 'Mui';
-    last: any = 'Css';
+    // input - floating
+    floatingForm = new FormGroup({
+        floatingText: new FormControl('')
+    });
 
+    // radio - ractive
+    radioForm = new FormGroup({
+        groupA: new FormControl('', Validators.required)
 
-    constructor() { }
+    });
 
-    ngOnInit(): void { }
+    // radio - template driven
+    radioValue: any = '';
 
-    onSubmitReactive(): void {
-        this.basicForm.reset();
+    // checkbox - reactive
+    checkForm = new FormGroup({
+        checkOne: new FormControl(false, Validators.requiredTrue),
+        checkTwo: new FormControl({ value: false, disabled: true }),
+        checkThree: new FormControl(true)
+    });
+
+    // checkbox - template driven
+    checkValueA: boolean = false;
+    checkValueB: boolean;
+
+    // checkbox - standalone
+    standaloneCheck: FormControl = new FormControl(false);
+    standaloneCheckValue: boolean = false;
+
+    // reset input form
+    submitInputReactive(): void {
+        console.log('reset reactive inputForm: ', `${this.inputForm.value} | ${this.inputForm.status}`);
+        this.inputForm.reset();
     }
 
-    onSubmitTemplate(f: NgForm): void {
-        console.log(f.value);
-        console.log(f.valid);
+    // reset template driven form
+    submitInputTemplate(f: NgForm): void {
+        console.log('reset template driven input form: ', `${f.value} | ${f.valid}`);
         f.reset();
     }
 
+    // reset inline form
     resetInlineForm(): void {
+        console.log('reset inline form: ', this.inlineForm.value);
         this.inlineForm.reset();
     }
+
 }

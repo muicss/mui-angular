@@ -55,33 +55,31 @@ export class InputComponent implements AfterViewInit, ControlValueAccessor {
     // autofocus
     if (this.autofocus) { this.renderer.selectRootElement(inputEl).focus(); }
 
-    // id - move from wrapper to input in case users want to access input by id
-    if (this.id) {
-      this.renderer.setAttribute(inputEl, 'id', this.id);
-      this.renderer.removeAttribute(wrapperEl, 'id');
+    /**
+     * name - gets set on NgControl through inputs for NgModel and formControlName directives only.
+     * Does not work for standalone FormControl directive
+     */
+    if (this.ngControl.name) {
+      this.renderer.setAttribute(inputEl, 'name', this.ngControl.name.toString());
+    } else {
+      console.warn(`
+        It looks like you're using formControl which does not have an input for the
+        name attribute.  If the name attribute is required (i.e. when submitting a form),
+        it is recommended to use either ngModel or formControlName.`);
     }
 
-    // min length
-    if (this.minlength) { this.renderer.setAttribute(inputEl, 'minlength', this.minlength); }
-
-    // max length
-    if (this.maxlength) { this.renderer.setAttribute(inputEl, 'maxlength', this.maxlength); }
-
-    // name
-    this.renderer.setAttribute(inputEl, 'name', this.ngControl.name.toString());
-
-    // placeholder
-    if (this.placeholder) { this.renderer.setAttribute(inputEl, 'placeholder', this.placeholder); }
-
-    // required
-    if (this.required) { this.renderer.setProperty(inputEl, 'required', true); }
-
-    // type
-    if (this.type) { this.renderer.setAttribute(inputEl, 'type', this.type); }
+    // set attributes
+    ['id', 'minlength', 'maxlength', 'placeholder', 'required', 'type'].forEach(attrName => {
+      const attrVal = this[attrName];
+      if (attrVal) {
+        this.renderer.setAttribute(inputEl, attrName, attrVal);
+      }
+    });
 
     // remove attributes from wrapper
     this.renderer.removeAttribute(wrapperEl, 'minlength');
     this.renderer.removeAttribute(wrapperEl, 'maxlength');
+    this.renderer.removeAttribute(wrapperEl, 'id');
   }
 
   /**
