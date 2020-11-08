@@ -79,6 +79,19 @@
     <p>Form Status: {{ r.valid }}</p>
   </mui-panel>
 
+  <h2>Radio - Standalone (formControl & ngModel)</h2>
+  <mui-panel>
+    <mui-radio label="Control 1" value="fc-1" [formControl]="standaloneRadio"></mui-radio>
+    <mui-radio label="Control 2" value="fc-2" [formControl]="standaloneRadio"></mui-radio>
+    <mui-radio label="Control 3" value="fc-3" [formControl]="standaloneRadio"></mui-radio>
+    <mui-divider></mui-divider>
+    <mui-radio label="Model 1" [(ngModel)]="standaloneRadioValue" name="standaloneRadioValue" value="ng-1"></mui-radio>
+    <mui-radio label="Model 2" [(ngModel)]="standaloneRadioValue" name="standaloneRadioValue" value="ng-2"></mui-radio>
+    <mui-radio label="Model 3" [(ngModel)]="standaloneRadioValue" name="standaloneRadioValue" value="ng-3"></mui-radio>
+    <p>Form control Value: {{ standaloneRadio.value | json }}</p>
+    <p>ngModel Value: {{ standaloneRadioValue }}</p>
+  </mui-panel>
+
   <h2>Checkboxes - Reactive</h2>
   <mui-panel>
     <form class="mui-form" [formGroup]="checkForm">
@@ -103,10 +116,95 @@
 
   <h2>Checkbox - Standalone (formControl & ngModel)</h2>
   <mui-panel>
-    <mui-checkbox label="[formControl]" value="alone" [formControl]="standaloneCheck"></mui-checkbox>
-    <mui-checkbox label="[(ngModel)]" [(ngModel)]="standaloneCheckValue" name="standaloneCheckValue"></mui-checkbox>
+    <mui-checkbox label="Control" value="control" [formControl]="standaloneCheck"></mui-checkbox>
+    <mui-checkbox label="Model" [(ngModel)]="standaloneCheckValue" name="standaloneCheckValue" value="model"></mui-checkbox>
     <p>Form control Value: {{ standaloneCheck.value | json }}</p>
     <p>ngModel Value: {{ standaloneCheckValue }}</p>
   </mui-panel>
 
+  <h2>Select - Reactive</h2>
+  <mui-panel>
+    <form class="mui-form" [formGroup]="selectForm">
+      <mui-select formControlName="inputA" label="Select 1">
+        <mui-option value="" label="enter value"></mui-option>
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+      <mui-select formControlName="inputB" label="Select 2 (required)">
+        <mui-option value="" label="enter value"></mui-option>
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+      <mui-select formControlName="inputC" label="Select 3 (disabled)">
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+      <mui-select formControlName="inputD" label="Select 4">
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+    </form>
+    <p>Form Value: {{ selectForm.value | json }}</p>
+    <p>Form Status: {{ selectForm.status }}</p>
+  </mui-panel>
+
+  <h2>Select - Template driven</h2>
+  <mui-panel>
+    <form class="mui-form" #s="ngForm">
+      <mui-select [(ngModel)]="selectValueA" name="selectValueA" label="Select 1">
+        <mui-option value="" label="enter value"></mui-option>
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+      <mui-select [(ngModel)]="selectValueB" name="selectValueB" required="true" label="Select 2 (required)">
+        <mui-option value="" label="enter value"></mui-option>
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+      <mui-select [(ngModel)]="selectValueC" name="selectValueC" label="Select 3 (disabled)" disabled="true">
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+      <mui-select [(ngModel)]="selectValueD" name="selectValueD" label="Select 4">
+        <mui-option value="option-1" label="Option 1"></mui-option>
+        <mui-option value="option-2" label="Option 2"></mui-option>
+        <mui-option value="option-3" label="Option 3"></mui-option>
+        <mui-option value="option-4" label="Option 4"></mui-option>
+      </mui-select>
+    </form>
+    <p>Form Value: {{ s.value | json }}</p>
+    <p>Form Status: {{ s.valid }}</p>
+  </mui-panel>
+
+  <h2>Select - Standalone (formControl & ngModel)</h2>
+  <mui-panel>
+    <mui-select [formControl]="standaloneSelect" label="Form Control">
+      <mui-option value="option-1" label="Option 1"></mui-option>
+      <mui-option value="option-2" label="Option 2"></mui-option>
+      <mui-option value="option-3" label="Option 3"></mui-option>
+      <mui-option value="option-4" label="Option 4"></mui-option>
+    </mui-select>
+    <mui-select [(ngModel)]="standaloneSelectValue" name="standaloneSelectValue" label="NgModel">
+      <mui-option value="option-1" label="Option 1"></mui-option>
+      <mui-option value="option-2" label="Option 2"></mui-option>
+      <mui-option value="option-3" label="Option 3"></mui-option>
+      <mui-option value="option-4" label="Option 4"></mui-option>
+    </mui-select>
+    <p>Form control Value: {{ standaloneSelect.value | json }}</p>
+    <p>ngModel Value: {{ standaloneSelectValue }}</p>
+  </mui-panel>
 </mui-container>

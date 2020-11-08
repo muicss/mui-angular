@@ -46,7 +46,7 @@ export class CheckboxComponent implements AfterViewInit, ControlValueAccessor {
 
         // required
         this.renderer.setProperty(inputEl, 'required', this.required);
-        
+
         /**
          * name - gets set on NgControl through inputs for NgModel and formControlName directives only.
          * Does not work for standalone FormControl directive
