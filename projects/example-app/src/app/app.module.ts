@@ -16,6 +16,7 @@ import { TextareaModule as MuiTextareaModule } from 'mui-angular/textarea';
 import { InputModule as MuiInputModule } from 'mui-angular/input';
 import { RadioModule as MuiRadioModule } from 'mui-angular/radio';
 import { CheckboxModule as MuiCheckboxModule } from 'mui-angular/checkbox';
+import { SelectModule as MuiSelectModule } from 'mui-angular/select';
 
 import { HomePageComponent } from './home-page';
 import { AppbarPageComponent } from './appbar-page';
@@ -62,7 +63,8 @@ import { AppRoutingModule } from './app.routing';
     MuiTextareaModule,
     MuiInputModule,
     MuiCheckboxModule,
-    MuiRadioModule
+    MuiRadioModule,
+    MuiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

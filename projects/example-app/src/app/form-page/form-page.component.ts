@@ -42,6 +42,10 @@ export class FormPageComponent {
     // radio - template driven
     radioValue: any = '';
 
+    // radio - standalone
+    standaloneRadio: FormControl = new FormControl('');
+    standaloneRadioValue: any = '';
+
     // checkbox - reactive
     checkForm = new FormGroup({
         checkOne: new FormControl(false, Validators.requiredTrue),
@@ -56,6 +60,24 @@ export class FormPageComponent {
     // checkbox - standalone
     standaloneCheck: FormControl = new FormControl(false);
     standaloneCheckValue: boolean = false;
+
+    // select - reactive
+    selectForm = new FormGroup({
+        inputA: new FormControl('option-4'),
+        inputB: new FormControl('', Validators.required),
+        inputC: new FormControl({value: '', disabled: true}),
+        inputD: new FormControl('')
+    });
+
+    // select template driven
+    selectValueA: any = 'option-4';
+    selectValueB: any = '';
+    selectValueC: any = '';
+    selectValueD: any = '';
+
+    // select - standalone
+    standaloneSelect: FormControl = new FormControl('');
+    standaloneSelectValue: any = '';
 
     // reset input form
     submitInputReactive(): void {
