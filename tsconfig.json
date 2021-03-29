@@ -16,11 +16,11 @@
       "dom"
     ],
     "paths": {
-      "mui-angular": [
+      "@muicss/angular": [
         "dist/mui-angular/mui-angular",
         "dist/mui-angular"
       ],
-      "mui-angular/*": [
+      "@muicss/angular/*": [
         "dist/mui-angular/*"
       ]
     }

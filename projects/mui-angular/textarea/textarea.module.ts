@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TextareaComponent } from './textarea.component';
-import { SharedModule} from 'mui-angular/shared';
+import { SharedModule} from '@muicss/angular/shared';
 
 @NgModule({
   declarations: [TextareaComponent],

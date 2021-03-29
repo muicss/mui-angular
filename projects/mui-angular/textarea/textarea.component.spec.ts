@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TextareaComponent } from 'mui-angular/textarea';
-import { ButtonModule } from 'mui-angular/button';
+import { TextareaComponent } from '@muicss/angular/textarea';
+import { ButtonModule } from '@muicss/angular/button';
 
 @Component({
   selector: 'textarea-component-test',

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mui-angular": {
+    "@muicss/angular": {
       "projectType": "library",
       "root": "projects/mui-angular",
       "sourceRoot": "projects/mui-angular/src",
@@ -169,5 +169,5 @@
       }
     }
   },
-  "defaultProject": "mui-angular"
+  "defaultProject": "@muicss/angular"
 }

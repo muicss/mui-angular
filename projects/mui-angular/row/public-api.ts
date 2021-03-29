@@ -1,5 +1,5 @@
 /*
- * Public API Surface of mui-angular/row
+ * Public API Surface of @muicss/angular/row
  */
 export * from './row.component';
 export * from './row.module';

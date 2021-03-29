@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ButtonModule } from 'mui-angular/button';
-import { CaretModule } from 'mui-angular/caret';
+import { ButtonModule } from '@muicss/angular/button';
+import { CaretModule } from '@muicss/angular/caret';
 import { ButtonComponent } from '../button/button.component';
 import { CaretComponent } from '../caret/caret.component';
 import { DropdownItemComponent } from './dropdown-item.component';

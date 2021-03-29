@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TabComponent } from 'mui-angular/tabs';
+import { TabComponent } from '@muicss/angular/tabs';
 
 @Component({ templateUrl: 'tabs-page.component.html' })
 export class TabsPageComponent {

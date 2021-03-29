@@ -1,5 +1,5 @@
 /*
- * Public API Surface of mui-angular/col
+ * Public API Surface of @muicss/angular/col
  */
 export * from './col.component';
 export * from './col.module';
