@@ -72,7 +72,7 @@ This repository contains the source code for the MUI Angular library (`projects/
 To build the library run:
 
 ```shell
-$ ng build mui-angular
+$ ng build @muicss/angular
 ```
 
 To view the example app:
