@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownComponent } from './dropdown.component';
 import { DropdownItemComponent } from './dropdown-item.component';
-import { ButtonModule } from 'mui-angular/button';
-import { CaretModule } from 'mui-angular/caret';
+import { ButtonModule } from '@muicss/angular/button';
+import { CaretModule } from '@muicss/angular/caret';
 
 @NgModule({
   declarations: [DropdownComponent, DropdownItemComponent],

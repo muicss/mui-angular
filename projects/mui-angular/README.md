@@ -1,24 +1,93 @@
-# MuiAngular
+# MUI Angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.14.
+MUI Angular is a library that helps you to add MUI components to your Angular apps seamlessly.
 
-## Code scaffolding
+**Install with NPM:**
 
-Run `ng generate component component-name --project mui-angular` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project mui-angular`.
-> Note: Don't forget to add `--project mui-angular` or else it will be added to the default project in your `angular.json` file. 
+```shell
+$ npm install --save @muicss/angular
+```
 
-## Build
+**Install with ng:**
 
-Run `ng build mui-angular` to build the project. The build artifacts will be stored in the `dist/` directory.
+```shell
+$ ng add @muicss/angular
+```
 
-## Publishing
+## Quickstart
 
-After building your library with `ng build mui-angular`, go to the dist folder `cd dist/mui-angular` and run `npm publish`.
+Create a new Angular app and install the MUI Angular library:
 
-## Running unit tests
+```shell
+$ ng new my-app --style scss
+$ cd my-app
+$ ng add @muicss/angular
+```
 
-Run `ng test mui-angular` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Next install the MUI SCSS files:
 
-## Further help
+```shell
+$ npm install --save muicss
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Add the MUI Angular button module to the app module (`src/app/app.module.ts`):
+
+```js
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { ButtonModule } from '@muicss/angular/button';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+Replace the app component html code with the following (`src/app/app.component.html`):
+
+```html
+<mui-button color="primary">Press Me!</mui-button>
+```
+
+Next add the MUI SCSS modules we need to your styles.scss file (`src/styles.scss`):
+
+```scss
+// Core variables and mixins
+@import
+"~muicss/lib/sass/mui/colors",
+"~muicss/lib/sass/mui/variables",
+"~muicss/lib/sass/mui/mixins";
+
+// Globals
+@import
+"~muicss/lib/sass/mui/globals";
+
+// Components
+@import
+"~muicss/lib/sass/mui/buttons";
+
+// Miscellaneous
+@import
+"~muicss/lib/sass/mui/helpers",
+"~muicss/lib/sass/mui/ripple",
+"~muicss/lib/sass/mui/typography";
+```
+
+Run the development server:
+
+```shell
+$ ng serve
+```
+
+Then visit http://localhost:4200/

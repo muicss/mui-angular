@@ -8,18 +8,18 @@ MUI Angular is a library that helps you to add MUI components to your Angular ap
 **Install with NPM:**
 
 ```shell
-$ npm install --save mui-angular
+$ npm install --save @muicss/angular
 ```
 
 **Install with ng:**
 
 ```shell
-$ ng add mui-angular
+$ ng add @muicss/angular
 ```
 
 ## Quickstart
 
-Create a new Angular app and install mui-angular
+Create a new Angular app and install MUI Angular
 
 ```shell
 $ ng new my-app
@@ -27,13 +27,13 @@ $ cd my-app
 $ ng add mui-angular
 ```
 
-Add the mui-angular button module to the app module (`src/app/app.module.ts`):
+Add the MUI Angular button module to the app module (`src/app/app.module.ts`):
 
 ```js
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ButtonModule } from 'mui-angular/button';
+import { ButtonModule } from '@muicss/angular/button';
 
 import { AppComponent } from './app.component';
 
@@ -92,4 +92,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-

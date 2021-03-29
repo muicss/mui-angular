@@ -1,5 +1,5 @@
 /*
- * Public API Surface of mui-angular/textarea
+ * Public API Surface of @muicss/angular/textarea
  */
 export * from './textarea.component';
 export * from './textarea.module';

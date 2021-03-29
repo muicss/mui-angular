@@ -1,5 +1,5 @@
 /*
- * Public API Surface of mui-angular/caret
+ * Public API Surface of @muicss/angular/caret
  */
 export * from './caret.component';
 export * from './caret.module';
