@@ -1,5 +1,5 @@
 {
-  "name": "mui-angular",
+  "name": "@muicss/angular",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.14",
@@ -7,6 +7,27 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
-  }
+  },
+  "description": "MUI Angular Library",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muicss/mui-angular.git"
+  },
+  "keywords": [
+    "mui",
+    "material design",
+    "angular",
+    "css",
+    "javascript",
+    "framework"
+  ],
+  "author": "Andres Morey (andres@muicss.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muicss/mui-angular/issues"
+  },
+  "homepage": "https://github.com/muicss/mui-angular#readme"
 }
-

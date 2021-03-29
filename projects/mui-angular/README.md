@@ -1,24 +1,63 @@
-# MuiAngular
+# MUI Angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.14.
+MUI Angular is a library that helps you to add MUI components to your Angular apps seamlessly.
 
-## Code scaffolding
+**Install with NPM:**
 
-Run `ng generate component component-name --project mui-angular` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project mui-angular`.
-> Note: Don't forget to add `--project mui-angular` or else it will be added to the default project in your `angular.json` file. 
+```shell
+$ npm install --save @muicss/angular
+```
 
-## Build
+**Install with ng:**
 
-Run `ng build mui-angular` to build the project. The build artifacts will be stored in the `dist/` directory.
+```shell
+$ ng add @muicss/angular
+```
 
-## Publishing
+## Quickstart
 
-After building your library with `ng build mui-angular`, go to the dist folder `cd dist/mui-angular` and run `npm publish`.
+Create a new Angular app and install MUI Angular:
 
-## Running unit tests
+```shell
+$ ng new my-app
+$ cd my-app
+$ ng add @muicss/angular
+```
 
-Run `ng test mui-angular` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Add the MUI Angular button module to the app module (`src/app/app.module.ts`):
 
-## Further help
+```js
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+import { ButtonModule } from '@muicss/angular/button';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+Replace the app component html code with the following (`src/app/app.component.html`):
+
+```html
+<mui-button>Press Me!</mui-button>
+```
+
+Run the development server:
+
+```shell
+$ ng serve
+```
+
+Then visit http://localhost:4200/
