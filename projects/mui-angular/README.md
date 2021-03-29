@@ -16,12 +16,18 @@ $ ng add @muicss/angular
 
 ## Quickstart
 
-Create a new Angular app and install MUI Angular:
+Create a new Angular app and install the MUI Angular library:
 
 ```shell
-$ ng new my-app
+$ ng new my-app --style scss
 $ cd my-app
 $ ng add @muicss/angular
+```
+
+Next install the MUI SCSS files:
+
+```shell
+$ npm install --save muicss
 ```
 
 Add the MUI Angular button module to the app module (`src/app/app.module.ts`):
@@ -51,7 +57,31 @@ export class AppModule { }
 Replace the app component html code with the following (`src/app/app.component.html`):
 
 ```html
-<mui-button>Press Me!</mui-button>
+<mui-button color="primary">Press Me!</mui-button>
+```
+
+Next add the MUI SCSS modules we need to your styles.scss file (`src/styles.scss`):
+
+```scss
+// Core variables and mixins
+@import
+"~muicss/lib/sass/mui/colors",
+"~muicss/lib/sass/mui/variables",
+"~muicss/lib/sass/mui/mixins";
+
+// Globals
+@import
+"~muicss/lib/sass/mui/globals";
+
+// Components
+@import
+"~muicss/lib/sass/mui/buttons";
+
+// Miscellaneous
+@import
+"~muicss/lib/sass/mui/helpers",
+"~muicss/lib/sass/mui/ripple",
+"~muicss/lib/sass/mui/typography";
 ```
 
 Run the development server:
