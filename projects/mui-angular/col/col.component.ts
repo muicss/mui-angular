@@ -18,15 +18,15 @@ export class ColComponent implements AfterViewInit {
 
   @Input() xl?: number;
 
-  @Input() 'xs-offset'?: number;
+  @Input('xs-offset') xsOffset?: number;
 
-  @Input() 'sm-offset'?: number;
+  @Input('sm-offset') smOffset?: number;
 
-  @Input() 'md-offset'?: number;
+  @Input('md-offset') mdOffset?: number;
 
-  @Input() 'lg-offset'?: number;
+  @Input('lg-offset') lgOffset?: number;
 
-  @Input() 'xl-offset'?: number;
+  @Input('xl-offset') xlOffset?: number;
 
   @ViewChild('col') col: ElementRef<HTMLDivElement>;
 
@@ -45,11 +45,11 @@ export class ColComponent implements AfterViewInit {
       md: 'mui-col-md-',
       lg: 'mui-col-lg-',
       xl: 'mui-col-xl-',
-      'xs-offset': 'mui-col-xs-offset-',
-      'sm-offset': 'mui-col-sm-offset-',
-      'md-offset': 'mui-col-md-offset-',
-      'lg-offset': 'mui-col-lg-offset-',
-      'xl-offset': 'mui-col-xl-offset-'
+      xsOffset: 'mui-col-xs-offset-',
+      smOffset: 'mui-col-sm-offset-',
+      mdOffset: 'mui-col-md-offset-',
+      lgOffset: 'mui-col-lg-offset-',
+      xlOffset: 'mui-col-xl-offset-'
     };
 
     // set col classes

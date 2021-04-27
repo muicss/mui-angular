@@ -12,6 +12,7 @@
       "element",
       "",
       "kebab-case"
-    ]
+    ],
+    "no-input-rename": false
   }
 }
