@@ -51,9 +51,10 @@
 
   <h2>Input - inline form</h2>
   <mui-panel>
-    <form class="mui-form--inline" [formGroup]="inlineForm" (ngSubmit)="resetInlineForm()">
+    <form class="mui-form--inline" [formGroup]="inlineForm" (ngSubmit)="submitInlineForm()">
       <mui-input id="inlineField" formControlName="inlineText" placeholder="Placeholder 1"></mui-input>
-      <mui-button variant="flat">Submit</mui-button>
+      <mui-button variant="raised" color="primary">Submit</mui-button>
+      <mui-button type="button" variant="flat" color="primary" (click)="resetInlineForm()">Cancel</mui-button>
     </form>
   </mui-panel>
 

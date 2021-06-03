@@ -97,4 +97,10 @@ export class FormPageComponent {
         this.inlineForm.reset();
     }
 
+    // reset inline form
+    submitInlineForm(): void {
+        console.log('submit inline form: ', this.inlineForm.value);
+        this.inlineForm.reset();
+    }
+
 }

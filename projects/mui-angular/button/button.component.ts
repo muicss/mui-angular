@@ -3,7 +3,7 @@ import { Component, ElementRef, Input, ViewChild, Renderer2, AfterViewInit } fro
 @Component({
   selector: 'mui-button',
   template: `
-    <button class="mui-btn" muiRipple #button [disabled]="disabled">
+    <button type={{type}} class="mui-btn" muiRipple #button [disabled]="disabled">
       <ng-content></ng-content>
       <span class="mui-btn__ripple-container"><span class="mui-ripple" #ripple></span></span>
     </button>
@@ -17,6 +17,7 @@ export class ButtonComponent implements AfterViewInit {
   @Input() color?: string;
   @Input() size?: string;
   @Input() disabled?: boolean = false;
+  @Input() type?: 'button' | 'reset' | 'submit' = 'submit';
 
   private buttonEl: HTMLButtonElement;
 
